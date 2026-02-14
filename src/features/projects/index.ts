@@ -1,2 +1,2 @@
-export { ProjectsSection } from "./ProjectsSection";
-export { ProjectCard } from "./ProjectCard";
+export { ProjectsSection } from "./ui/ProjectsSection";
+export { ProjectCard } from "./ui/ProjectCard";
