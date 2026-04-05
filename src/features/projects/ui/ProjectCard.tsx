@@ -1,4 +1,4 @@
-import { Card, CardContent, Typography, Box, Chip } from "@mui/material";
+import { Badge } from "@/components/ui/badge";
 import type { Project } from "../../../shared/constants/projects";
 
 interface ProjectCardProps {
@@ -7,82 +7,40 @@ interface ProjectCardProps {
 
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card
-      variant="outlined"
-      sx={{
-        backgroundColor: (t) => `${t.palette.primary.main}08`,
-        transition: "all 0.2s ease",
-        "&:hover": {
-          backgroundColor: (t) => `${t.palette.primary.main}12`,
-        },
-      }}
-    >
-      <CardContent sx={{ p: 1.5 }}>
-        <Box
-          sx={{
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "flex-start",
-            mb: 0.5,
-          }}
-        >
-          <Box>
-            <Typography variant="subtitle2" sx={{ fontWeight: 600 }}>
-              {project.title}
-            </Typography>
-            {project.company && (
-              <Typography variant="caption" color="text.secondary">
-                {project.company}
-              </Typography>
-            )}
-          </Box>
-        </Box>
-        {project.period && (
-          <Typography
-            variant="caption"
-            color="text.disabled"
-            sx={{ display: "block", mb: 0.5 }}
-          >
-            {project.period}
-          </Typography>
+    <div className="rounded-lg border border-[var(--card-border)] bg-primary/[0.04] hover:bg-primary/[0.08] transition-colors p-3">
+      <div className="flex items-start justify-between gap-2 mb-0.5">
+        <div>
+          <p className="text-sm font-semibold">{project.title}</p>
+          {project.company && (
+            <p className="text-xs text-[var(--muted)]">{project.company}</p>
+          )}
+        </div>
+        {project.role && (
+          <span className="text-xs text-[var(--muted)] shrink-0">
+            {project.role}
+          </span>
         )}
-        <Typography variant="caption" color="text.secondary">
-          {project.desc}
-        </Typography>
-        {project.achievements && (
-          <Box sx={{ mt: 1, mb: 1 }}>
-            {project.achievements.map((achievement) => (
-              <Typography
-                key={achievement}
-                variant="caption"
-                display="block"
-                color="text.secondary"
-                sx={{ fontSize: "0.7rem" }}
-              >
-                ✓ {achievement}
-              </Typography>
-            ))}
-          </Box>
-        )}
-        <Box
-          sx={{
-            display: "flex",
-            gap: 0.5,
-            mt: 1,
-            flexWrap: "wrap",
-          }}
-        >
-          {project.tech.map((t) => (
-            <Chip
-              key={t}
-              label={t}
-              size="small"
-              variant="outlined"
-              sx={{ height: 24 }}
-            />
+      </div>
+      {project.period && (
+        <p className="text-xs text-[var(--muted)] mb-1">{project.period}</p>
+      )}
+      <p className="text-xs text-[var(--muted)] mb-2">{project.desc}</p>
+      {project.achievements.length > 0 && (
+        <div className="space-y-0.5 mb-2">
+          {project.achievements.map((a) => (
+            <p key={a} className="text-xs text-[var(--muted)]">
+              ✓ {a}
+            </p>
           ))}
-        </Box>
-      </CardContent>
-    </Card>
+        </div>
+      )}
+      <div className="flex flex-wrap gap-1">
+        {project.tech.map((t) => (
+          <Badge key={t} variant="outline">
+            {t}
+          </Badge>
+        ))}
+      </div>
+    </div>
   );
 }

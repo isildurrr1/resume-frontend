@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm uninstall:*)",
+      "Bash(npm install:*)",
+      "Bash(npm run:*)",
+      "mcp__shadcn__search_items_in_registries",
+      "mcp__shadcn__list_items_in_registries",
+      "Bash(node -e \"const si = require\\('react-icons/si'\\); const keys = Object.keys\\(si\\).filter\\(k => k.toLowerCase\\(\\).includes\\('play'\\) || k.toLowerCase\\(\\).includes\\('hook'\\) || k.toLowerCase\\(\\).includes\\('claude'\\) || k.toLowerCase\\(\\).includes\\('zod'\\) || k.toLowerCase\\(\\).includes\\('vitest'\\) || k.toLowerCase\\(\\).includes\\('prettier'\\)\\); console.log\\(keys\\)\")",
+      "Bash(node -e \"const si = require\\('react-icons/si'\\); const keys = Object.keys\\(si\\).filter\\(k => k.toLowerCase\\(\\).includes\\('jest'\\) || k.toLowerCase\\(\\).includes\\('testing'\\)\\); console.log\\(keys\\)\")"
+    ]
+  }
+}

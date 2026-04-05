@@ -13,8 +13,12 @@ export const SKILLS = [
   "Git",
   "Webpack",
   "Vite",
+  "Jest",
+  "React Testing Library",
   "Playwright",
-  "Testing",
+  "Zustand",
+  "React Native",
+  "REST API",
 ];
 
 export const LANGUAGES = [
@@ -26,6 +30,16 @@ export const LANGUAGES = [
 export const SPOKEN_LANGUAGES = [
   { name: "Русский", level: "Native" },
   { name: "English", level: "A2 (Reading & Documentation)" },
+];
+
+export const AI_TOOLS = [
+  "Cursor",
+  "Claude Code",
+  "MCP Servers",
+  "Prompt Engineering",
+  "Agent Docs (CLAUDE.md)",
+  "GitHub Copilot",
+  "AI Code Review",
 ];
 
 export const SOFT_SKILLS = [
